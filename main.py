@@ -17,10 +17,9 @@ res = req.get(connection).json()
 
 data = [DataPoint(i) for i in res]
 
-for i in data: print(i.period)
-
 for i in data:
-    i.calculate()
+    i.calculateDate()
+    i.normalizeValue()
 
 
 fig = createplot(data)

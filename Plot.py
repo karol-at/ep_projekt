@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from math import ceil, floor 
 
 def createplot(data):
     fig, ax = plt.subplots()
@@ -10,7 +11,10 @@ def createplot(data):
     [i.value for i in data]
     )
     ax.set(
-        yticks = np.arange(98, 106, 2),
+        yticks = np.arange(
+            floor(min(data, key = lambda x: x.value).value),
+            ceil(max(data, key = lambda x: x.value).value) + 1
+            ),
         xticks = np.arange(1, 13),
         xlabel = 'miesiąc',
         ylabel = 'wartość [%]',
