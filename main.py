@@ -23,4 +23,6 @@ for i in data:
     i.calculate()
 
 
-createplot(data)
+fig = createplot(data)
+
+fig.savefig('plot.png')

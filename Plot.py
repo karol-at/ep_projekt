@@ -16,4 +16,4 @@ def createplot(data):
         ylabel = 'wartość [%]',
         title = 'wartość inflacji w roku 2022'
     )
-    plt.show()
+    return fig
