@@ -2,5 +2,4 @@
 
 ## Opis projektu
 
-> Pobieranie danych z API SDP GUS
-> Wykresiki z matplotlib
+Projekt pobiera dane z API SDP GUS, a następnie robi z nich wykres z wykorzytsaniem biblioteki matplotlib
