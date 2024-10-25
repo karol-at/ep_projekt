@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from math import ceil, floor 
+from DataClasses import DataPoint
 
-def createplot(data):
+def createplot(data: DataPoint) -> plt.Figure:
     fig, ax = plt.subplots()
     fig.set_size_inches(6,4)
     ax.grid()

@@ -10,5 +10,5 @@ reqParams = {
     }
 }
 
-def buildconnectionstring(address, collection, lang, element = '', time = ''):
+def buildconnectionstring(address, collection, lang, element = '', time = '') -> str:
     return f'{address}{collection}?id-wskaznik={element}&id-rok={time}&lang={lang}'
