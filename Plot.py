@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import roman
 from math import ceil, floor 
 from DataClasses import DataPoint
 
@@ -11,6 +12,7 @@ def createplot(data: DataPoint) -> plt.Figure:
     [i.period for i in data],
     [i.value for i in data]
     )
+    tickLabels = [roman.toRoman(i) for i in range(1, 13)]
     ax.set(
         yticks = np.arange(
             floor(min(data, key = lambda x: x.value).value),
