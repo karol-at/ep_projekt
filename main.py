@@ -3,7 +3,6 @@ from DataClasses import *
 from Plot import *
 import requests as req
 
-
 connection = buildconnectionstring(
     address = reqParams['address'],
     collection = reqParams['collection']['indicator'],
@@ -14,13 +13,11 @@ connection = buildconnectionstring(
 
 res = req.get(connection).json()
 
-
 data = [DataPoint(i) for i in res]
 
 for i in data:
     i.calculateDate()
     i.normalizeValue()
-
 
 fig = createplot(data)
 
