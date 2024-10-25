@@ -19,8 +19,9 @@ def createplot(data: DataPoint) -> plt.Figure:
             ceil(max(data, key = lambda x: x.value).value) + 1
             ),
         xticks = np.arange(1, 13),
-        xlabel = 'miesiąc',
-        ylabel = 'wartość [%]',
-        title = 'wartość inflacji w roku 2022'
+        xticklabels = tickLabels,
+        xlabel = 'Miesiąc',
+        ylabel = 'Wartość [%]',
+        title = 'Wartość inflacji w roku 2022'
     )
     return fig
