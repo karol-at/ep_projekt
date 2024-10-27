@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import roman
 from math import ceil, floor 
-from DataClasses import DataPoint
+from DataClasses import *
 
 def createplot(data: DataPoint) -> plt.Figure:
     fig, ax = plt.subplots()
@@ -19,6 +19,13 @@ def createplot(data: DataPoint) -> plt.Figure:
     )
     tickLabels = [roman.toRoman(i) for i in range(1, 13)]
     fig.set_linewidth(18)
+    plotLines = convertData(data)
+    for line in plotLines:
+        ax.plot(
+            [line.firstPeriod, line.secondPeriod],
+            [line.firstValue, line.secondValue],
+            color = line.color
+        )
     ax.set(
         yticks = np.arange(
             floor(min(data, key = lambda x: x.value).value),
