@@ -1,16 +1,19 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from math import ceil, floor 
-from DataClasses import DataPoint
+from DataClasses import *
 
 def createplot(data: DataPoint) -> plt.Figure:
     fig, ax = plt.subplots()
     fig.set_size_inches(6,4)
     ax.grid()
-    ax.plot(
-    [i.period for i in data],
-    [i.value for i in data]
-    )
+    plotLines = convertData(data)
+    for line in plotLines:
+        ax.plot(
+            [line.firstPeriod, line.secondPeriod],
+            [line.firstValue, line.secondValue],
+            color = line.color
+        )
     ax.set(
         yticks = np.arange(
             floor(min(data, key = lambda x: x.value).value),
