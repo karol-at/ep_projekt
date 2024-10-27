@@ -4,7 +4,7 @@ import roman
 from math import ceil, floor 
 from DataClasses import *
 
-def createplot(data: DataPoint) -> plt.Figure:
+def createplot(data: DataPoint, year: str) -> plt.Figure:
     fig, ax = plt.subplots()
     ax.xaxis.label.set_fontsize(18)
     ax.yaxis.label.set_fontsize(18)
@@ -35,6 +35,6 @@ def createplot(data: DataPoint) -> plt.Figure:
         xticklabels = tickLabels,
         xlabel = 'Miesiąc',
         ylabel = 'Wartość [%]',
-        title = 'Wartość inflacji w roku 2022'
+        title = f'Wartość inflacji w roku {year}'
     )
     return fig
