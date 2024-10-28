@@ -3,8 +3,7 @@ from DataClasses import *
 from Plot import *
 import requests as req
 
-print('Please enter requested year (from 2010 to 2023):')
-year = input()
+year = input('Please enter requested year (from 2010 to 2023):')
 
 try:
     connection = buildconnectionstring(
