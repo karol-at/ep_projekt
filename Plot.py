@@ -22,8 +22,8 @@ def createplot(data: DataPoint, year: str) -> plt.Figure:
     plotLines = convertData(data)
     for line in plotLines:
         ax.plot(
-            [line.firstPeriod, line.secondPeriod],
-            [line.firstValue, line.secondValue],
+            [line.periods[0], line.periods[1]],
+            [line.values[0], line.values[1]],
             color = line.color
         )
     ax.set(

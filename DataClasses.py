@@ -11,11 +11,9 @@ class DataPoint:
 
 class PlotLine:
     def __init__(self, firstPoint: DataPoint, secondPoint: DataPoint):
-        self.firstPeriod = firstPoint.period
-        self.firstValue = firstPoint.value
-        self.secondPeriod = secondPoint.period
-        self.secondValue = secondPoint.value
-        if self.firstValue > self.secondValue:
+        self.periods = (firstPoint.period, secondPoint.period)
+        self.values = (firstPoint.value, secondPoint.value)
+        if self.values[0] > self.values[1]:
             self.color = 'green'
         else:
             self.color = 'red'
